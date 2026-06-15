@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 8th Monthsary, Yuri 🌸</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- INTRO SCREEN — Tag card with Yes / No                        -->
+  <!-- ============================================================ -->
+  <section id="intro-screen" class="screen active">
+    <div id="petals-container"></div>
+
+    <!-- The gift tag card -->
+    <div class="tag-card" id="tag-card">
+      <!-- Twine knot at the top -->
+      <div class="tag-knot">
+        <div class="knot-circle"></div>
+        <div class="twine-left"></div>
+        <div class="twine-right"></div>
+      </div>
+
+      <!-- Hole punch circle -->
+      <div class="tag-hole"></div>
+
+      <!-- Card body -->
+      <div class="tag-body">
+        <p class="tag-question">Would You Like To See It?</p>
+
+        <div class="tag-buttons">
+          <button class="tag-btn yes-btn" onclick="startJourney()">Yes</button>
+          <button class="tag-btn no-btn" onclick="handleNo()">No</button>
+        </div>
+
+        <p class="tag-no-hint" id="no-hint"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ENVELOPE SCREEN                                               -->
+  <!-- ============================================================ -->
+  <section id="envelope-screen" class="screen">
+    <div id="petals-container-2"></div>
+
+    <div class="envelope-wrapper" id="envelope-wrapper">
+      <div class="envelope" id="envelope">
+
+        <div class="envelope-back"></div>
+
+        <div class="letter-inside" id="letter-inside">
+          <div class="letter-peek">A letter for you...</div>
+        </div>
+
+        <div class="envelope-body">
+          <div class="env-pattern"></div>
+          <div class="envelope-address">
+            <span class="to-text">To: <em id="env-recipient">Yuri</em></span>
+          </div>
+        </div>
+
+        <div class="envelope-left"></div>
+        <div class="envelope-right"></div>
+        <div class="envelope-bottom"></div>
+
+        <div class="envelope-flap" id="envelope-flap">
+          <div class="flap-inner"></div>
+        </div>
+
+        <div class="wax-seal" id="wax-seal">
+          <div class="seal-inner">
+            <span class="seal-letter">❤</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="tap-hint" id="tap-hint">— tap the envelope to open —</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- LETTER SCREEN                                                 -->
+  <!-- ============================================================ -->
+  <section id="letter-screen" class="screen">
+    <div id="petals-container-3"></div>
+    <div class="letter-screen-bg"></div>
+
+    <div class="letter-page" id="letter-page">
+      <div class="paper-overlay"></div>
+
+      <!-- Letter Header -->
+      <div class="letter-header-simple">
+        <div class="to-from-block">
+          <div class="to-line">To: <span class="to-name" id="letter-to">Yuri</span></div>
+          <div class="from-line">From: <span class="from-name" id="letter-from">Zayd</span></div>
+          <div class="date-line" id="letter-date">June 15, 2026</div>
+        </div>
+      </div>
+
+      <div class="letter-divider"><span>~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~</span></div>
+
+      <!-- Letter Body — typewriter fills this -->
+      <div class="letter-body" id="letter-body">
+        <span id="letter-text-output"></span>
+        <span class="cursor letter-cursor" id="letter-cursor">|</span>
+      </div>
+
+      <div class="letter-divider"><span>~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~</span></div>
+
+      <!-- Closing -->
+      <div class="letter-closing">
+        <p class="closing-line">Forever yours,</p>
+        <p class="closing-name" id="closing-from">Zayd</p>
+        <div class="closing-hearts">❤ ❤ ❤</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- MUSIC PLAYER                                                  -->
+  <!-- ============================================================ -->
+  <div class="music-player" id="music-player">
+    <audio id="bg-music" loop>
+      <source src="music/Daniel Caesar - Always (Official Audio).mp3" type="audio/mpeg" />
+    </audio>
+    <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Play/Pause">
+      <span id="music-icon">♪</span>
+    </button>
+    <input type="range" id="volume-slider" class="volume-slider"
+      min="0" max="1" step="0.05" value="0.5"
+      oninput="setVolume(this.value)" title="Volume" />
+  </div>
+
+  <!-- Transition overlay -->
+  <div id="transition-overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
