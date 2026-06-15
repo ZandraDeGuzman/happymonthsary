@@ -30,7 +30,7 @@ Here's to many more chapters, more memories, more laughter, more growth, and mor
 Happy 8th motmot, mahal koooo. `
 };
 
-const MUSIC_FILE = "music/Daniel Caesar - Always (Official Audio).mp3";
+const MUSIC_FILE = "Daniel Caesar - Always (Official Audio).mp3";
 
 /* ============================================================ */
 /* STATE                                                          */
